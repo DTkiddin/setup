@@ -2,10 +2,10 @@
 # Basic
 ####################
 1 googlechrome
-1 logitech-options
-1 winrar
-1 keepass
-2 filezilla
+2 ublockorigin-chrome
+1 firefox
+1 7zip
+1 lastpass
 2 qbittorrent
 2 discord
 
@@ -22,21 +22,23 @@
 3 mp3tag
 3 picard
 3 obs-studio
+3 livestreamer-twitch-gui
 
 ####################
 # Entertainment
 ####################
-2 ds4windows
 3 steam
+3 origin
+3 uplay
+3 goggalaxy
 
 ####################
 # Monitoring
 ####################
 2 coretemp
-2 intel-xtu
 2 crystaldiskinfo
 2 crystaldiskmark
-2 batteryinfoview
+2 malwarebytes
 
 ####################
 # Tools
@@ -45,30 +47,21 @@
 1 winmerge
 2 sysinternals
 2 win32diskimager
-2 cheatengine
 2 windirstat
 2 bulkrenameutility
-
-####################
-# Development
-####################
-1 git
-1 git-lfs
-1 curl
-1 cmake
-1 gitkraken
-2 dependencywalker
-2 reshack
-2 postman
-2 angryip
-2 fiddler
-#2 docker-cli
+2 winscp
+2 putty
+2 f.lux
+2 anydesk
+2 audacity
+2 irfanview 
+2 qbittorrent
+3 irfanviewplugins
 
 ####################
 # IDE and editors
 ####################
 1 notepadplusplus
-1 vscode
 
 ####################
 # Runtime
@@ -80,6 +73,4 @@
 ####################
 # SDK
 ####################
-1 mingw
-1 nodejs
 2 python
