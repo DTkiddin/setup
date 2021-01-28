@@ -1,6 +1,6 @@
 # Settings
-$repoUri = 'https://github.com/Xeeynamo/setup.git'
-$setupPath = "./xeeynamo-setup"
+$repoUri = 'https://github.com/dtkiddin/setup.git'
+$setupPath = "./dtkiddin-setup"
 
 Push-Location "/"
 
@@ -17,7 +17,7 @@ if (Test-Path -Path $setupPath) {
 }
 
 # Install git
-& choco install git --confirm --limit-output
+# & choco install git --confirm --limit-output
 
 # Reset the path environment
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
