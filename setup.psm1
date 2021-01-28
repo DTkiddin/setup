@@ -9,7 +9,7 @@ function Start-Setup {
     # Make sure that Git Bash uses colors on Windows
     [System.Environment]::SetEnvironmentVariable("FORCE_COLOR", "true", "Machine")
 
-    Set-ShellFolders
+    #Set-ShellFolders
     Install-UserProfile
     Install-StartLayout "./configs/start-layout.xml"
     Install-WindowsDeveloperMode
@@ -60,7 +60,7 @@ function Start-Setup {
     Remove-HiddenAttribute (Join-Path $env:USERPROFILE "AppData")
 
     Install-Foobar2000Plugins "./configs/foobar2000plugins.txt"
-    Install-VsCodeExtensions "./configs/vscode-extensions.txt"
+    #Install-VsCodeExtensions "./configs/vscode-extensions.txt"
 
     Get-ChildItem .\modules\common.psm1 | Import-Module -Force
     Get-ChildItem .\modules\*.psm1 | Import-Module -Force
