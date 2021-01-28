@@ -39,6 +39,7 @@
 2 crystaldiskinfo
 2 crystaldiskmark
 2 malwarebytes
+2 evga-precision-x1
 
 ####################
 # Tools
