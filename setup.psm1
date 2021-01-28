@@ -60,18 +60,10 @@ function Start-Setup {
     Remove-HiddenAttribute (Join-Path $env:USERPROFILE "AppData")
 
     Install-Foobar2000Plugins "./configs/foobar2000plugins.txt"
-    #Install-VsCodeExtensions "./configs/vscode-extensions.txt"
 
     Get-ChildItem .\modules\common.psm1 | Import-Module -Force
     Get-ChildItem .\modules\*.psm1 | Import-Module -Force
     $global:setupPath = (Get-Location).Path
-
-    Install-VisualStudioProfessional (Join-VisualStudioConfigurations @(
-        "./configs/visualstudio/core.vsconfig",
-        "./configs/visualstudio/dotnet.vsconfig",
-        "./configs/visualstudio/cplusplus.vsconfig"
-    ))
-
 
     # Install Dracula theme and configs for Notepad++
     Get-DownloadFile "~\AppData\Roaming\Notepad++\themes\Dracula.xml" "https://raw.githubusercontent.com/dracula/notepad-plus-plus/master/Dracula.xml"
@@ -97,27 +89,11 @@ function Start-Setup {
     Remove-TempDirectory
 }
 
-function Set-ShellFolders {
-    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "Desktop" "D:\Xeeynamo\Desktop"
-    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "My Music" "D:\Xeeynamo\Music"
-    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "My Pictures" "D:\Xeeynamo\Pictures"
-    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "My Video" "D:\Xeeynamo\Video"
-    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "Personal" "D:\Xeeynamo\Documents"
-    Set-RegistryString "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "{374DE290-123F-4565-9164-39C4925E467B}" "D:\Xeeynamo\Downloads"
-}
-
 function Install-Foobar2000Plugins([string]$configFileName) {
     Get-Content $configFileName |
         Where-Object { $_[0] -ne '#' -and $_.Length -gt 0 } |
         ForEach-Object {
             Install-Foobar2000PluginFromUrl $_
-        }
-}
-function Install-VsCodeExtensions([string]$configFileName) {
-    Get-Content $configFileName |
-        Where-Object { $_[0] -ne '#' -and $_.Length -gt 0 } |
-        ForEach-Object {
-            Install-VsCodeExtension $_
         }
 }
 
