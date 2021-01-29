@@ -17,7 +17,7 @@ if (Test-Path -Path $setupPath) {
 }
 
 # Install git
-# & choco install git --confirm --limit-output
+& choco install git --confirm --limit-output
 
 # Reset the path environment
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
