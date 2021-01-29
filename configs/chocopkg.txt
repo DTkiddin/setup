@@ -1,6 +1,10 @@
 ####################
 # Basic
 ####################
+1 git
+1 git-lfs
+1 curl
+1 cmake
 1 googlechrome
 2 ublockorigin-chrome
 1 firefox
