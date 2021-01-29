@@ -29,10 +29,8 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 Push-Location $setupPath
 Import-Module '.\setup.psm1' -Force
 
-if ($debug -ne $true) {
-    Start-Setup
+Start-Setup
 
-    # Clean
-    Pop-Location
-    Pop-Location
-}
+# Clean
+Pop-Location
+Pop-Location
